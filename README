@@ -7,10 +7,16 @@ SUMMARY
 Slimmed down version of David Troy's Geohash for use in Appcelerator iPhone Applications
 Will accept lat/long dictionary and resolution:
 
-plotGeoHash({lat: 33.806024, lng: -84.342295}, 5);
+geo = new GeohashClass();
+geo.map = Titanium.Map.createView({
+  //Your settings
+});
+geo.plotGeoHash({lat: 33.806024, lng: -84.342295}, 5);
 
-And will plot bounding boxes as in Troy's demo at http://openlocation.org/geohash/geohash-js/ if a Titanium mapview has been created as var mapview.
+And will plot bounding boxes as in Troy's demo at http://openlocation.org/geohash/geohash-js/ if a Titanium mapview has been set. Annotations to mark the geohashes used can be done with:
+
+geo.plotGridHashes();
 
 For more information visit the original github project here: https://github.com/davetroy/geohash-js
 
-A screenshot of the final product is included in this project here: https://github.com/digitalscientists/geohash-js/blob/master/geohash_grid.png Note than annotations are not created automatically, but are easily built using the final_hashes array. This will be integrated in future updates.
+A screenshot of the final product is included in this project here: https://github.com/digitalscientists/geohash-js/blob/master/geohash_grid.png
